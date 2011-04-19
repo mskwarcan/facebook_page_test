@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :page_id, "Enter Page ID" %><br />
+    <%= f.text_field :page_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit "View Posts" %>
+  </div>
+<% end %>
